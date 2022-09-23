@@ -35,11 +35,8 @@ function EditContact(props) {
   }
 
   return (
-    <div className="App">
-    
+    <div className="App"> 
     <div className="bg-white">
-
-
       <main className="overflow-hidden">
         {/* Header */}
         <div className="bg-warm-gray-50">
@@ -51,7 +48,6 @@ function EditContact(props) {
             </div>
           </div>
         </div>
-
         {/* Contact section */}
         <section className="relative bg-white" aria-labelledby="contact-heading">
           <div className="absolute h-1/2 w-full bg-warm-gray-50" aria-hidden="true" />
@@ -85,7 +81,6 @@ function EditContact(props) {
               <h2 id="contact-heading" className="sr-only">
                 Contact us
               </h2>
-
               <div className="grid grid-cols-1 lg:grid-cols-3">
                 {/* Contact information */}
                 <div className="relative overflow-hidden bg-gradient-to-b from-teal-500 to-teal-600 py-10 px-6 sm:px-10 xl:p-12">
@@ -267,7 +262,6 @@ function EditContact(props) {
                         onSubmit={() => alert("Contact edited successfully! The contact has been successfully edited")}
                      >
                         Submit
-
                       </button>
                     </div>
                   </form>

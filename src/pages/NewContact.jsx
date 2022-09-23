@@ -32,10 +32,7 @@ function NewContact({ user }) {
 
   return (
     <div className="App">
-    
     <div className="bg-white">
-
-
       <main className="overflow-hidden">
         {/* Header */}
         <div className="bg-warm-gray-50">
@@ -199,10 +196,6 @@ function NewContact({ user }) {
                     </div>
                   </ul>
                 </div>
-                {/* width: 100%;
-  height: 300px;
-  object-position: center; */}
-                {/* Contact form */}
                 <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
                   <h3 className="text-lg font-medium text-warm-gray-900">New Contact Info</h3>
                   <form onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
@@ -260,7 +253,6 @@ function NewContact({ user }) {
                         />
                       </div>
                     </div>
-
                     <div className="sm:col-span-2">                  
                     </div>
                     <div className="sm:col-span-2 sm:flex sm:justify-end">

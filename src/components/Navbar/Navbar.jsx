@@ -2,7 +2,6 @@ import { Fragment } from 'react'
 import { Disclosure} from '@headlessui/react'
 import { PlusIcon } from '@heroicons/react/20/solid'
 
-
 const navigation = [
   { name: 'Contact List', href: '/contactlist', current: true },
 ]
@@ -97,13 +96,11 @@ export default function Navbar(props) {
                       </div>               
                       <button
                         onClick={handleLogout}                            
-                        className="relative inline-flex items-center rounded-md border border-transparent bg-teal-700 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-teal-900 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2 focus:ring-offset-gray-800">
-                                                  
+                        className="relative inline-flex items-center rounded-md border border-transparent bg-teal-700 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-teal-900 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2 focus:ring-offset-gray-800">                                                
                         Log Out
                       </button>
                   </>
-                )}
-                                
+                )}                          
             </div> 
           </div>
         </div>       

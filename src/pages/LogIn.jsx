@@ -5,7 +5,6 @@ import "./Signup";
 import * as PATHS from "../utils/paths";
 import * as USER_HELPERS from "../utils/userToken";
 
-
 export default function LogIn({ authenticate }) {
   const [form, setForm] = useState({
     username: "",
@@ -41,15 +40,11 @@ export default function LogIn({ authenticate }) {
     <>    
       <div className="min-h-full flex">
         <div className="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
-          <div className="mx-auto w-full max-w-sm lg:w-96">
-            
-            <div>
-                
-                
+          <div className="mx-auto w-full max-w-sm lg:w-96">        
+            <div>             
                 <h2 className="mt-6 text-3xl font-extrabold text-gray-900">Log In</h2>
                 <p className="mt-2 text-sm text-gray-600">
-                  You don't have an account? {' '}
-                  
+                  You don't have an account? {' '}             
                   <a href="/signup" className="font-medium text-violet-400 hover:text-gray-900">
                     Sign Up Here!
                   </a>
@@ -114,7 +109,6 @@ export default function LogIn({ authenticate }) {
                                 )}
                     </div>
                   </div>
-
 
                   <div>
                     <button
