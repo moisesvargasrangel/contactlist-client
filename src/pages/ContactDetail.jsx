@@ -76,7 +76,7 @@ export default function ContactDetail(props) {
                     <div className="mt-0">
                       <div className="rounded-lg shadow-md">
                         <Link
-                          to="#"
+                          to={`/contactlist/edit/${contact._id}`}
                           className="block w-full rounded-lg border border-transparent bg-blue-600 px-6 py-4 text-center text-xl font-medium leading-6 text-white hover:bg-teal-700 mb-2"
                           aria-describedby="tier-growth"
                         >
