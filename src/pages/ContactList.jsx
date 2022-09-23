@@ -2,22 +2,19 @@ import React from "react";
 import "../App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const API_URL = `${process.env.REACT_APP_SERVER_URL}`;
 
-
 function ContactList({ user }) {
   const userId = user._id
-  console.log(userId)
+
   const [contacts, setContacts] = useState([]);
-  const { contactId } = useParams();
-  const navigate = useNavigate();
 
   const getAllContacts = () => {
     axios.get(`${API_URL}/contacts`, { params: { userId } })
       .then((response) => {
-        console.log(response.data)
+
         setContacts(response.data)
       })
       .catch((error) => console.log(error));
@@ -27,15 +24,10 @@ function ContactList({ user }) {
     getAllContacts();
   }, []);
 
-
-  console.log(contacts)
   return (
     <div>
       <div className="App">
-
         <div className="bg-white">
-
-
           <main className="overflow-hidden">
             {/* Header */}
             <div className="bg-warm-gray-50">
@@ -47,7 +39,6 @@ function ContactList({ user }) {
                 </div>
               </div>
             </div>
-
             {/* Contact section */}
             <section className="relative bg-white" aria-labelledby="contact-heading">
               <div className="absolute h-1/2 w-full bg-warm-gray-50" aria-hidden="true" />
@@ -76,23 +67,17 @@ function ContactList({ user }) {
                   <rect width={404} height={384} fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)" />
                 </svg>
               </div>
-
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="relative bg-white shadow-xl">
-
-
-                  <div className="grid grid-cols-1 lg:grid-cols-3">
+                <div className="grid grid-cols-1 lg:grid-cols-3">
                     {/* Contact information */}
                     <div className="relative overflow-hidden bg-gradient-to-b from-teal-500 to-teal-600 py-10 px-6 sm:px-10 xl:p-12">
                       {/* Decorative angle backgrounds */}
-
-
                       <div
                         className="pointer-events-none absolute top-0 right-0 bottom-0 hidden w-1/2 lg:block"
                         aria-hidden="true"
                       >
-
-                        <svg
+                      <svg
                           className="absolute inset-0 h-full w-full"
                           width={160}
                           height={678}
@@ -126,9 +111,7 @@ function ContactList({ user }) {
                       <p className="mt-6 max-w-3xl text-base text-teal-50">
                         Here you can see the list of your added contacts.
                       </p>
-
                       <ul className="mt-12 ml-24">
-
                         <li>
                           <img
                             className="object-fill h-32 w-auto "
@@ -136,16 +119,10 @@ function ContactList({ user }) {
                             alt="Your Company"
                           />
                         </li>
-
                       </ul>
                     </div>
-
                     <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
-
-
-
                       <div className="mt-6 flow-root">
-
                         <ul className="-my-5 divide-y divide-gray-200">
                           {contacts.map((contact) => (
                             <li key={contact._id} className="py-4">
@@ -154,7 +131,6 @@ function ContactList({ user }) {
                                   <p className="truncate text-sm font-medium text-gray-900">{contact.firstName} {contact.lastName}</p>
                                   <p className="truncate text-sm text-gray-500">{"📞" + contact.phone}</p>
                                 </div>
-
                                 <div>
                                   <Link
                                     to={`/contactlist/${contact._id}`}
@@ -165,14 +141,11 @@ function ContactList({ user }) {
                                     </svg>
                                   </Link>
                                 </div>
-
                               </div>
                             </li>
                           ))}
                         </ul>
                       </div>
-
-
                     </div>
                   </div>
                 </div>
@@ -182,7 +155,6 @@ function ContactList({ user }) {
         </div>
       </div>
     </div>
-
   );
 }
 

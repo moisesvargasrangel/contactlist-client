@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate} from "react-router-dom";
 import axios from "axios";
+import swal from "sweetalert";
 
 const API_URL = `${process.env.REACT_APP_SERVER_URL}`; 
 
@@ -30,6 +31,7 @@ function EditContact(props) {
       navigate("/contactlist")
     })
     .catch(console.log)
+    swal("Contact edited successfully!", "The contact has been successfully edited", "info");
   }
 
   return (
@@ -262,8 +264,10 @@ function EditContact(props) {
                       <button
                         type="submit"
                         className="mt-2 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-teal-500 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 sm:w-auto"
-                      >
+                        onSubmit={() => alert("Contact edited successfully! The contact has been successfully edited")}
+                     >
                         Submit
+
                       </button>
                     </div>
                   </form>

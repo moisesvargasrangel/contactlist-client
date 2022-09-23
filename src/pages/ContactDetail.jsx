@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate, Navigate, Link } from "react-router-dom";
+import swal from 'sweetalert';
 
 export default function ContactDetail(props) {
 
@@ -25,6 +26,7 @@ export default function ContactDetail(props) {
     navigate("/contactlist")
   })
   .catch(console.log)
+  swal("Contact deleted successfully!", "The contact has been deleted successfully", "warning");
  }
 
   return (
@@ -77,7 +79,6 @@ export default function ContactDetail(props) {
                       <div className="rounded-lg shadow-md">
                         <Link
                           to={`/contactlist/edit/${contact?._id}`}
-                      
                           className="block w-full rounded-lg border border-transparent bg-blue-600 px-6 py-4 text-center text-xl font-medium leading-6 text-white hover:bg-teal-700 mb-2"
                           aria-describedby="tier-growth"
                         >
@@ -85,6 +86,7 @@ export default function ContactDetail(props) {
                         </Link>
                         <button
                           onClick={handleDelete}
+                          onSubmit={() => alert("Contact deleted successfully! The contact has been deleted successfully")}
                           className="block w-full rounded-lg border border-transparent bg-red-800 px-6 py-4 text-center text-xl font-medium leading-6 text-white hover:bg-teal-700"
                           aria-describedby="tier-growth"
                         >

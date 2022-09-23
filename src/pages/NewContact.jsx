@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
 import axios from "axios";
+import swal from "sweetalert";
 
 const API_URL = `${process.env.REACT_APP_SERVER_URL}`;
 
@@ -26,6 +27,7 @@ function NewContact({ user }) {
         navigate("/contactlist");
       })
       .catch((error) => console.log(error));
+      swal("Contact added successfully!", "The contact has been successfully added", "success");
   };
 
   return (
@@ -264,6 +266,7 @@ function NewContact({ user }) {
                     <div className="sm:col-span-2 sm:flex sm:justify-end">
                       <button
                         type="submit"
+                        onSubmit={() => alert("Contact added successfully! The contact has been added successfully")}
                         className="mt-2 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-teal-500 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 sm:w-auto"
                       >
                         Submit
