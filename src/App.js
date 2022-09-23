@@ -66,20 +66,20 @@ export default function App() {
   return (
     <div className="App">
       <Navbar handleLogout={handleLogout} user={user} />
-        <Routes>
-            {routes({ user, authenticate, handleLogout }).map((route) => (
-            <Route key={route.path} path={route.path} element={route.element} />
-          ))}
-          <Route path="/" element={<HomePage/>}/>
-          <Route path="/newcontact" element={<NewContact/>}/>
-          <Route path="/contactlist" element={<ContactList/>}/>
-          <Route path="/contactlist/:contactId" element={<ContactDetail/>}/>
-          <Route path="/contactlist/edit/:contactId" element={<EditContact/>}/>
+      <Routes>
+        {routes({ user, authenticate, handleLogout }).map((route) => (
+          <Route key={route.path} path={route.path} element={route.element} />
+        ))}
+        <Route path="/" element={<HomePage />} />
+        <Route path="/newcontact" element={<NewContact user={user} />} />
+        <Route path="/contactlist" element={<ContactList user={user} />} />
+        <Route path="/contactlist/:contactId" element={<ContactDetail />} />
+        <Route path="/contactlist/edit/:contactId" element={<EditContact />} />
 
-          <Route path="/forgot" element={<Forgot/>}/>
-          <Route path="/reset/:id" element={<Reset/>}/>
-        </Routes>
-      <Footer/>      
+        <Route path="/forgot" element={<Forgot />} />
+        <Route path="/reset/:id" element={<Reset />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }

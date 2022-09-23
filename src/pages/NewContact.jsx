@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 import "../App.css";
 import axios from "axios";
 
-const API_URL = `${process.env.REACT_APP_SERVER_URL}`; 
+const API_URL = `${process.env.REACT_APP_SERVER_URL}`;
 
-function NewContact(props) {
+function NewContact({ user }) {
+  const userId = user._id
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
@@ -16,7 +17,7 @@ function NewContact(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const requestBody = {firstName, lastName, phone};
+    const requestBody = { firstName, lastName, phone, userId };
     axios.post(`${API_URL}/contacts`, requestBody)
       .then((response) => {
         setFirstName("");
@@ -26,7 +27,6 @@ function NewContact(props) {
       })
       .catch((error) => console.log(error));
   };
-
 
   return (
     <div className="App">
